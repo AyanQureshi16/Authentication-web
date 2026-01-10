@@ -47,7 +47,7 @@
         /* Main Content */
         .main {
             flex-grow: 1;
-            margin-left: 260px; /* Sidebar ki jagah */
+            margin-left: 260px;
             padding: 30px;
             width: calc(100% - 260px);
             transition: all 0.3s ease;
@@ -75,6 +75,12 @@
             border-radius: 10px;
             cursor: pointer;
             font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        #logout:hover {
+            background: #ff3838;
+            transform: translateY(-2px);
         }
 
         /* Stats Cards */
@@ -98,13 +104,118 @@
 
         .card i { font-size: 30px; margin-bottom: 10px; color: var(--primary); }
 
-        /* Mobile Adjustments (THE REAL RESPONSIVE PART) */
+        /* Todo Section Styles */
+        .todo-section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+
+        .todo-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+        }
+
+        .todo-input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        #todoInp {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        #todoInp:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        #submitBtn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        #submitBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        #editBtn {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        #todoList {
+            list-style: none;
+            padding: 0;
+        }
+
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            gap: 10px;
+        }
+
+        .todo-text {
+            flex: 1;
+            margin: 0;
+            word-break: break-word;
+            min-width: 0;
+        }
+
+        .todo-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .todo-btn {
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .todo-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .sidebar {
-                left: -260px; /* Sidebar bahar nikal di */
+                left: -260px;
             }
             .sidebar.active {
-                left: 0; /* Click karne pe andar aaye gi */
+                left: 0;
             }
             .main {
                 margin-left: 0;
@@ -112,10 +223,63 @@
                 padding: 15px;
             }
             .menu-btn {
-                display: block; /* Mobile pe menu button dikhao */
+                display: block;
             }
             .grid {
-                grid-template-columns: 1fr; /* Mobile pe ek card ek line mein */
+                grid-template-columns: 1fr;
+            }
+            .todo-input-container {
+                flex-direction: column;
+            }
+            #submitBtn {
+                width: 100%;
+            }
+            .todo-section {
+                padding: 20px 15px;
+            }
+            .todo-section h2 {
+                font-size: 18px;
+            }
+            .todo-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .todo-text {
+                width: 100%;
+            }
+            .todo-actions {
+                width: 100%;
+                justify-content: flex-end;
+            }
+            .todo-btn {
+                flex: 1;
+                max-width: 80px;
+            }
+            .top-bar {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            #user-display {
+                order: 3;
+                width: 100%;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 15px;
+            }
+            .todo-actions {
+                flex-wrap: wrap;
+            }
+            .todo-btn {
+                flex: 1;
+                min-width: 60px;
+                font-size: 11px;
+                padding: 5px 8px;
             }
         }
     </style>
@@ -153,31 +317,47 @@
             <h1 style="margin-bottom: 15px;">Welcome to Dashboard </h1>
             <p style="color: #718096; line-height: 1.8;">
             <div class="card" style="align-items: flex-start; text-align: left; padding: 30px; width: 100%;">
-    <h2 style="margin-bottom: 20px; color: var(--primary);">System Overview & User Guide</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%;">
-        
-        <div style="background: #f8f9ff; padding: 15px; border-radius: 10px; border-left: 4px solid #4ade80;">
-            <h4 style="margin-bottom: 8px;"><i class="fas fa-user-check"></i> Account Activity</h4>
-            <p style="font-size: 14px; color: #666;">Aapka account successfully login hai. Firebase Security Rules ke mutabiq aapka session encrypted aur mahfooz hai.</p>
-        </div>
+                <h2 style="margin-bottom: 20px; color: var(--primary);">System Overview & User Guide</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%;">
+                    
+                    <div style="background: #f8f9ff; padding: 15px; border-radius: 10px; border-left: 4px solid #4ade80;">
+                        <h4 style="margin-bottom: 8px;"><i class="fas fa-user-check"></i> Account Activity</h4>
+                        <p style="font-size: 14px; color: #666;">Aapka account successfully login hai. Firebase Security Rules ke mutabiq aapka session encrypted aur mahfooz hai.</p>
+                    </div>
 
-        <div style="background: #f8f9ff; padding: 15px; border-radius: 10px; border-left: 4px solid #667eea;">
-            <h4 style="margin-bottom: 8px;"><i class="fas fa-info-circle"></i> Quick Tips</h4>
-            <ul style="font-size: 13px; color: #666; padding-left: 15px;">
-                <li>Profile section mein ja kar apni details update karein.</li>
-                <li>Hamesha kaam khatam hone ke baad Logout lazmi karein.</li>
-                <li>Security alerts ke liye email notifications on rakhein.</li>
-            </ul>
-        </div>
+                    <div style="background: #f8f9ff; padding: 15px; border-radius: 10px; border-left: 4px solid #667eea;">
+                        <h4 style="margin-bottom: 8px;"><i class="fas fa-info-circle"></i> Quick Tips</h4>
+                        <ul style="font-size: 13px; color: #666; padding-left: 15px;">
+                            <li>Profile section mein ja kar apni details update karein.</li>
+                            <li>Hamesha kaam khatam hone ke baad Logout lazmi karein.</li>
+                            <li>Security alerts ke liye email notifications on rakhein.</li>
+                        </ul>
+                    </div>
 
-    </div>
+                </div>
 
-    <div style="margin-top: 25px; padding: 15px; background: #fff5f5; border-radius: 10px; width: 100%;">
-        <p style="font-size: 14px; color: #e53e3e;"><strong>Note:</strong> Ye dashboard abhi development phase mein hai. Naye features jaise 'Real-time Database' aur 'Cloud Storage' jald add kiye jayenge.</p>
-    </div>
-</div>
+                <div style="margin-top: 25px; padding: 15px; background: #fff5f5; border-radius: 10px; width: 100%;">
+                    <p style="font-size: 14px; color: #e53e3e;"><strong>Note:</strong> Ye dashboard abhi development phase mein hai. Naye features jaise 'Real-time Database' aur 'Cloud Storage' jald add kiye jayenge.</p>
+                </div>
+            </div>
             </p>
+        </div>
+
+        <!-- Todo List Section -->
+        <div class="todo-section">
+            <h2><i class="fas fa-tasks"></i> My Todo List (Firebase Realtime Database)</h2>
+            
+            <div class="todo-input-container">
+                <input type="text" id="todoInp" placeholder="Enter your task here..." />
+                <button id="submitBtn">Submit</button>
+            </div>
+
+            <ul id="todoList">
+                <li style='list-style: none; text-align: center; padding: 20px; color: #718096;'>
+                    Loading todos...
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -185,11 +365,6 @@
         // Mobile Sidebar Toggle
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
-        }
-
-        // Auth Check
-        if (!localStorage.getItem("isLoggedIn")) {
-            window.location.replace("login.html");
         }
     </script>
 
