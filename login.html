@@ -320,21 +320,22 @@ input::placeholder {
         <p>Sign in to continue to your account</p>
       </div>
 
-      <form class="auth-form" onsubmit="return false;">
-        <div class="input-group">
-          <label for="lemail">Email Address</label>
-          <input type="email" id="lemail" placeholder="you@example.com" required>
-        </div>
+      <!-- Form tag mein ID add karo -->
+<form class="auth-form" id="login-form">
+  <div class="input-group">
+    <label for="lemail">Email Address</label>
+    <input type="email" id="lemail" placeholder="you@example.com" required>
+  </div>
 
-        <div class="input-group">
-          <label for="lpassword">Password</label>
-          <input type="password" id="lpassword" placeholder="Enter your password" required>
-        </div>
+  <div class="input-group">
+    <label for="lpassword">Password</label>
+    <input type="password" id="lpassword" placeholder="Enter your password" required>
+  </div>
 
-        <button type="submit" id="login-btn" class="primary-btn">
-          Sign In
-        </button>
-      </form>
+  <button type="submit" class="primary-btn">
+    Sign In
+  </button>
+</form>
 
       <div class="divider">
         <span>or continue with</span>
@@ -366,4 +367,9 @@ input::placeholder {
   </div>
   <script type="module" src="app.js"></script>
 </body>
+<!-- Firebase v8 -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="app.js"></script>
 </html>

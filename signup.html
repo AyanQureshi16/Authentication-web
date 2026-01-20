@@ -321,22 +321,22 @@ input::placeholder {
         <p>Sign up to get started</p>
       </div>
 
-      <form class="auth-form" onsubmit="return false;">
-        <div class="input-group">
-          <label for="semail">Email Address</label>
-          <input type="email" id="semail" placeholder="you@example.com" required>
-        </div>
+     <!-- Form tag mein ID add karo aur onclick hata do -->
+<form class="auth-form" id="signup-form">
+  <div class="input-group">
+    <label for="semail">Email Address</label>
+    <input type="email" id="semail" placeholder="you@example.com" required>
+  </div>
 
-        <div class="input-group">
-          <label for="spassword">Password</label>
-          <input type="password" id="spassword" placeholder="At least 6 characters" required>
-        </div>
+  <div class="input-group">
+    <label for="spassword">Password</label>
+    <input type="password" id="spassword" placeholder="At least 6 characters" required>
+  </div>
 
-        <button type="submit" onclick="signup()" class="primary-btn">
-          Create Account
-        </button>
-      </form>
-
+  <button type="submit" class="primary-btn">
+    Create Account
+  </button>
+</form>
       <div class="divider">
         <span>or continue with</span>
       </div>
@@ -367,5 +367,10 @@ input::placeholder {
     </div>
   </div>
   <script type="module" src="app.js"></script>
+  <!-- Firebase v8 -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
