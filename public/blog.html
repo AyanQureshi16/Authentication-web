@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - AS-Collection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <button class="menu-btn" id="mobileMenuBtn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                
+                <a href="index.html" class="logo">
+                    <span class="logo-text">AS-Collection</span>
+                </a>
+
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="products.html" class="nav-link">Products</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="blog.html" class="nav-link active">Blog</a>
+                </nav>
+
+                <div class="search-bar">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" placeholder="Search products..." class="search-input" id="searchInput">
+                </div>
+
+                <div class="header-actions">
+                    <button class="icon-btn theme-toggle" id="themeToggle">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn cart-btn" id="cartBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-menu-link">Home</a>
+            <a href="products.html" class="mobile-menu-link">Products</a>
+            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="contact.html" class="mobile-menu-link">Contact</a>
+            <a href="blog.html" class="mobile-menu-link active">Blog</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title animate-fade-in">Our Blog</h1>
+            <p class="page-subtitle animate-fade-in">Latest news, trends, and shopping tips</p>
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                <article class="blog-card animate-on-scroll">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600" alt="Shopping Trends" crossorigin="anonymous">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 15, 2025</span>
+                        <h2>Top Shopping Trends for 2025</h2>
+                        <p>Discover the latest trends that will shape online shopping in the coming year...</p>
+                        <a href="#" class="btn btn-outline btn-hover-effect">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card animate-on-scroll">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600" alt="Tech Gadgets" crossorigin="anonymous">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 10, 2025</span>
+                        <h2>Must-Have Tech Gadgets</h2>
+                        <p>Explore the most innovative tech products that will revolutionize your daily life...</p>
+                        <a href="#" class="btn btn-outline btn-hover-effect">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card animate-on-scroll">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600" alt="Fashion Guide" crossorigin="anonymous">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 5, 2025</span>
+                        <h2>Winter Fashion Guide</h2>
+                        <p>Stay stylish and warm with our curated selection of winter fashion essentials...</p>
+                        <a href="#" class="btn btn-outline btn-hover-effect">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card animate-on-scroll">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=600" alt="Home Decor" crossorigin="anonymous">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 1, 2025</span>
+                        <h2>Home Decor Ideas</h2>
+                        <p>Transform your living space with these creative and affordable home decor tips...</p>
+                        <a href="#" class="btn btn-outline btn-hover-effect">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card animate-on-scroll">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600" alt="Shopping Tips" crossorigin="anonymous">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">December 28, 2024</span>
+                        <h2>Smart Shopping Tips</h2>
+                        <p>Learn how to save money while getting the best quality products online...</p>
+                        <a href="#" class="btn btn-outline btn-hover-effect">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card animate-on-scroll">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600" alt="Fitness Products" crossorigin="anonymous">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">December 25, 2024</span>
+                        <h2>Best Fitness Products</h2>
+                        <p>Get fit and healthy with our top picks for fitness equipment and accessories...</p>
+                        <a href="#" class="btn btn-outline btn-hover-effect">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-text">AS-Collection</span>
+                    </div>
+                    <p class="footer-description">
+                        Your one-stop destination for premium products at unbeatable prices.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Shop</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html">New Arrivals</a></li>
+                        <li><a href="products.html">Best Sellers</a></li>
+                        <li><a href="products.html">Sale</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 AS-Collection. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Shopping Cart <span id="cartItemCount">(0)</span>
+            </h3>
+            <button class="close-btn" id="closeCartBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-empty" id="cartEmpty">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <h3>Your cart is empty</h3>
+            <p>Add some products to get started!</p>
+            <button class="btn btn-primary" id="continueShoppingBtn">Continue Shopping</button>
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="shipping">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout</button>
+            <button class="btn btn-outline btn-full" id="continueShoppingBtn2">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="toastMessage">Product added to cart</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
